@@ -1,0 +1,48 @@
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-Ken52zDQe3Hsr+HxX8j7tCx7etun2hXz8qUtxe7tXGCpO3o+HBGt+z+YfAiq5Gd" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU2l17+qQE384H8r1C8d6k5h6t661vNqE9xU9yK/Q7rFUXdWnT9kY3vH+g" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+{% block content %}
+<form method="post" class="d-flex flex-column align-items-center pt-5">
+  {% csrf_token %}
+  <h2>Sign Up</h2>
+  <div class="form-group row mb-3">
+    <label for="username" class="col-sm-2 col-form-label">Username:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="password1" class="col-sm-2 col-form-label">Password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password1" name="password1" required>
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="password2" class="col-sm-2 col-form-label">Confirm Password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password2" name="password2" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+        <label class="form-check-label" for="terms">I agree to the terms and conditions.</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+{% endblock %}
+</body>
